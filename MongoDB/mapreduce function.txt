@@ -1,0 +1,18 @@
+db.Books.mapReduce(
+	function(){
+		var words = this.Content.split(" ");
+		if(words){
+			for(var i = 0; i < words.length; i++){
+				emit(words[i].length, 1);
+			}
+		}
+	},
+	function(key,value){
+		var total = 0;
+		for(var i = 0; i < value.length; i++){
+			total += value[i];
+		}
+		return total;
+	},
+	{out: "count_words"}
+);

@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<countries>
+    <country name ='ISRAEL'>
+        <city num = '500000' name = 'JERUSALEM' />
+        <city num = '600000' name = 'TEL-AVIV' />
+        <city num = '200000' name = 'ARIEL' />
+    </country>
+    <country name ='CANDA'>
+        <city num = '800000' name = 'ALBERTA' />
+        <city num = '100000' name = 'MANITOBA' />
+    </country>
+    <country name ='USA'>
+        <city num = '2000000' name = 'ALASKA' />
+        <city num = '1500000' name = 'ALABAMA' />
+    </country>
+</countries>
+
+
+
+
+//country[sum(.//@num) > 1000000]/@name
+
+
+
+

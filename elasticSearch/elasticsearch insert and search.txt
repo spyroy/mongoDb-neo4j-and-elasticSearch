@@ -1,0 +1,35 @@
+PUT /books/books/111
+{"Name": "b1", "author": "a1", "gener": "sci-fi", "publisher": "p1", "year":"3001","summary":"i love reailty but also Fiction Science"}
+
+PUT /books/books/222
+{"Name": "b2", "author": "a2", "gener": "sci", "publisher": "p2", "year":"2998","summary":"i  dont love reailty but i love Fiction Science"}
+
+PUT /books/books/333
+{"Name": "b3", "author": "a3", "gener": "sci-fi", "publisher": "p3", "year":"2000","summary":"i love reailty but also Fiction Science"}
+
+PUT /books/books/444
+{"Name": "b4", "author": "a4", "gener": "sci-fi", "publisher": "p4", "year":"3004","summary":"i love reailty but also Fiction Science"}
+
+PUT /books/books/555
+{"Name": "b5", "author": "a5", "gener": "comedy", "publisher": "p5", "year":"3005","summary":"i realy love reailty but also Fiction Science"}
+
+POST /books/books/_search
+{
+  "query": {
+    "bool": { 
+      "must": [
+        { "match": { "summary": "reailty" }},
+        { "match": { "summary": "Fiction Science" }}, 
+        { "match": { "gener": "sci-fi" }},
+        { 
+          "range":{
+            "year": {
+              "gte":"2999"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "_source":["Name","author","gener","publisher","year","summary"]
+}

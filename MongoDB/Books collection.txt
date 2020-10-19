@@ -1,0 +1,26 @@
+db.Books.insertMany([
+	{
+		Series_Name: "A Song of Ice and Fire",
+		Author: "George R.R.Martin",
+		Publisher: "OPUS",
+		Year_Of_Publish: "2000",
+		Book_Name: "A CLASH OF KINGS",
+		Content: "He was riding to the top with lord mormunt and the officers"  
+	},
+	{
+		Series_Name: "A Song of Ice and Fire",
+		Author: "George R.R.Martin",
+		Publisher: "OPUS",
+		Year_Of_Publish: "2005",
+		Book_Name: "A FEAST FOR CROWS",
+		Content: "Sam stood by the window and looked to the sun"  
+	},
+	{
+		Series_Name: "ARTEMIS FOWL",
+		Author: "EOIN COLFER",
+		Publisher: "MIRAMAX BOOKS",
+		Year_Of_Publish: "2005",
+		Book_Name: "THE OPAL DECEPTION",
+		Content: "The J.Argon Clinic was not a state hospital"  
+	}
+])

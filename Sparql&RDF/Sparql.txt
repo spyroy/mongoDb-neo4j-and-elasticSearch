@@ -1,0 +1,7 @@
+SELECT ?x WHERE 
+{
+	?fatherID name 'ראובן אריאל'
+	?sonID father_id ?fatherID
+	?grandchild father_id ?sonID
+	?grandchild name ?x 
+} 

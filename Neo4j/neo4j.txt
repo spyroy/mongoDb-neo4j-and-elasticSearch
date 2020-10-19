@@ -1,0 +1,30 @@
+match (a)-[r:friend_Of*0..3]-(b) where b.address = 'TLV' AND b.salary > '19998'
+AND a.salary > '19998' AND (a)-[:work_In]->(:department{d_name:'QA'}) with b,collect(distinct(a)) as fr
+return b.name as work_in_TLV_and_makes_more_than_19998,
+fr as friens_which_makes_more_than_19998_and_working_as_QA 
+ORDER BY b.name
+
+
+
+create 
+(matan:worker {name:'matan',id:'111',address:'NY',salary:'20000'}),
+(elad:worker {name:'elad',id:'222',address:'TLV',salary:'30000'}),
+(uri:manager {name:'uri',id:'333',address:'IL',salary:'35000'}),
+(csd:department {d_name:'CS'}),
+(matan)-[:work_In]->(csd),
+(elad)-[:work_In]->(csd),
+(uri)-[:work_In]->(csd),
+(matan)-[:friend_Of]->(uri),
+(elad)-[:friend_Of]->(matan),
+(elad)-[:friend_Of]->(uri),
+(uri)-[:friend_Of]->(matan),
+(daniel:worker {name:'daniel',id:'444',address:'TLV',salary:'20000'}),
+(yossi:worker {name:'yossi',id:'555',address:'TLV',salary:'21000'}),
+(orly:worker {name:'orly',id:'777',address:'TLV',salary:'35000'}),
+(qa:department {d_name:'QA'}),
+(daniel)-[:work_In]->(qa),
+(yossi)-[:work_In]->(qa),
+(orly)-[:work_In]->(qa),
+(daniel)-[:friend_Of]->(elad),
+(yossi)-[:friend_Of]->(daniel),
+(orly)-[:friend_Of]->(yossi)
